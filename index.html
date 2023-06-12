@@ -19,7 +19,7 @@
                             <div class="col-1 bg-grey">
                                 <div class="dimension">
                                     <img src="./img/avatar_io.jpg" alt="Sofia">
-                                    <label>Sofia</label>
+                                    <label class="margin-left">Sofia</label>
                                 </div>
                                 <div class="icon">
                                     <i class="fa-solid fa-circle-notch"></i>
@@ -44,7 +44,12 @@
                                         <img :src="contact.avatar">
                                         <div class="margin-left">
                                             <label v-text="contact.name"></label>
-                                            <p class="color">Ultimo messaggio inviato</p>
+                                            <p class="color" v-if="contact.messages.length > 0">
+                                                <span v-if="contact.messages[contact.messages.length - 1].status === 'sent'">Tu: </span>
+                                                {{ contact.messages[contact.messages.length - 1].message }}
+                                            </p>
+                                            <p class="color" v-else>Nessun messaggio</p>
+                                            <p class="date" v-if="contact.messages.length > 0">{{ contact.messages[contact.messages.length - 1].date }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -68,16 +73,16 @@
                                 </div>
                             </div>
                             <div class="bg-image">                                
-                                    <div class="message" v-for="message in contacts[movimento].messages" :key="message.date" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
-                                        <p>{{ message.message }}</p>
-                                        <p class="date">{{ message.date }}</p>
-                                        <i class="fas fa-ellipsis-h" @click="showDropdown(message)"></i>
-                                        <div class="dropdown" v-if="message.showDropdown">
-                                            <ul>
-                                                <li @click="deleteMessage(message)">Cancella messaggio</li>
-                                            </ul>
-                                        </div>
+                                <div class="message" v-for="message in contacts[movimento].messages" :key="message.date" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                                    <p>{{ message.message }}</p>
+                                    <p class="date">{{ message.date }}</p>
+                                    <i class="fas fa-ellipsis-h" @click="showDropdown(message)"></i>
+                                    <div class="dropdown" v-if="message.showDropdown">
+                                        <ul>
+                                            <li @click="deleteMessage(message)">Cancella messaggio</li>
+                                        </ul>
                                     </div>
+                                </div>
                             </div>
                             <div class="col-2 bg-grey">
                                 <i class="fa-regular fa-face-smile"></i>
