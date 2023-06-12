@@ -3,9 +3,65 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=+, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
         <title>Boolzapp</title>
     </head>
     <body>
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="row-1">
+                            <div class="col-1 bg-grey">
+                                <div class="dimension">
+                                    <img src="./img/avatar_io.jpg" alt="Sofia">
+                                    <label>Sofia</label>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                    <i class="fa-solid fa-message"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                            <div class="bg-heavenly">
+                                <i class="fa-solid fa-bell-slash"></i>
+                                <div>
+                                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                    <a href="#">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                            <div class="col-1 bg-grey">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                            <div class="height">
+                                <div class="dimension avatar" v-for="(contact, index) in contacts">
+                                    <img :src="contact.avatar">
+                                    <label v-text="contact.name"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row-1">
+                            <div class="col-2">
+    
+                            </div>
+                            <div class="col-2">
+    
+                            </div>
+                            <div class="col-2">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

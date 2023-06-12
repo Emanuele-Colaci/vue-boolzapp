@@ -3,3 +3,122 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/**********************
+    COLORI DI BG 
+************************/
+
+.bg-grey{
+    background-color: rgba(216, 216, 216, 0.627);
+    padding: 10px;
+}
+
+.bg-heavenly{
+    background-color: rgb(94, 171, 248, 0.557);
+    padding: 10px;
+    display: flex;
+}
+
+/***********************
+    FINE COLORI DI BG 
+************************/
+
+.container{
+    width: 700px;
+    max-height: 100vh;
+    margin: 2rem auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.col, .col-1{
+    width: 100%;
+}
+
+.col-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.dimension img{
+    width: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.fa-solid{
+    cursor: pointer;
+    color: grey;
+}
+
+.fa-message{
+    margin: 0 10px 0 10px;
+}
+
+.fa-bell-slash{
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px 8px;
+    color: rgba(105, 178, 251, 0.557);
+    margin-right: 10px;
+}
+
+.bg-heavenly a{
+    color: grey;
+}
+
+.col-1 input, .fa-magnifying-glass{
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.col-1 input{
+    width: 100%;
+    padding: 2px 0 2px 3px;
+    border: 1px solid grey;
+}
+
+.fa-magnifying-glass{
+    padding: 3.5px 10px;
+    border: 1px solid grey;
+    border-right: none;
+}
+
+.flex-collumn{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+
+.height{
+    max-height: 300px;
+    overflow: auto;
+}
+
+.avatar{
+    background-color: #fff;
+    padding: 10px;
+    border: 0.5px solid grey;
+    border-bottom: none;
+}
+
+.avatar:nth-child(8){
+    border-bottom: 0.5px solid grey;
+}
+
+.avatar:hover{
+    background-color: rgb(192, 192, 192);
+}
