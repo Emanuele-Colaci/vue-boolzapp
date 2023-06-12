@@ -170,6 +170,8 @@ createApp({
         }
     },
     methods:{
-      
+        selectSlide(index){
+            this.movimento = index;
+        },
     },
 }).mount('#app');

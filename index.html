@@ -39,20 +39,33 @@
                                 <input type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
                             <div class="height">
-                                <div class="dimension avatar" v-for="(contact, index) in contacts">
+                                <div class="dimension avatar" v-for="(contact, index) in contacts" :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
                                     <img :src="contact.avatar">
-                                    <label v-text="contact.name"></label>
+                                    <div class="margin-left">
+                                        <label v-text="contact.name"></label>
+                                        <p class="color">Ultimo messaggio inviato</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="row-1">
-                            <div class="col-2">
-    
+                        <div class="row-2">
+                            <div class="col-2 bg-grey dimension">
+                                <div>
+                                    <img :src="contacts[movimento].avatar">
+                                    <label class="margin-left" v-text="contacts[movimento].name"></label>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
                             </div>
-                            <div class="col-2">
-    
+                            <div class="col-2 bg-image">
+                                <div v-if="">
+
+                                </div>
                             </div>
                             <div class="col-2">
     

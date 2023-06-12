@@ -48,9 +48,10 @@ body{
     align-items: center;
 }
 
-.row-1{
+.row-2{
     display: flex;
     flex-direction: column;
+    border-left: 1px solid black;
 }
 
 .dimension img{
@@ -64,8 +65,8 @@ body{
     color: grey;
 }
 
-.fa-message{
-    margin: 0 10px 0 10px;
+.fa-message, .fa-paperclip{
+    margin: 0 10px;
 }
 
 .fa-bell-slash{
@@ -80,7 +81,7 @@ body{
     color: grey;
 }
 
-.col-1 input, .fa-magnifying-glass{
+.col-1 input, .col-1 .fa-magnifying-glass{
     background-color: #fff;
     font-size: 15px;
 }
@@ -91,7 +92,7 @@ body{
     border: 1px solid grey;
 }
 
-.fa-magnifying-glass{
+.col-1 .fa-magnifying-glass{
     padding: 3.5px 10px;
     border: 1px solid grey;
     border-right: none;
@@ -113,6 +114,13 @@ body{
     padding: 10px;
     border: 0.5px solid grey;
     border-bottom: none;
+    display: flex;
+    cursor: pointer;
+}
+
+.color{
+    color: rgb(113, 113, 113);
+    font-size: 10px;
 }
 
 .avatar:nth-child(8){
@@ -121,4 +129,18 @@ body{
 
 .avatar:hover{
     background-color: rgb(192, 192, 192);
+}
+
+.margin-left{
+    margin-left: 5px;
+}
+
+.col-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bg-image{
+    background-image: url(../img/mine.jpg);
 }
