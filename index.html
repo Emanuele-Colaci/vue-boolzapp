@@ -71,6 +71,12 @@
                                     <div class="message" v-for="message in contacts[movimento].messages" :key="message.date" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
                                         <p>{{ message.message }}</p>
                                         <p class="date">{{ message.date }}</p>
+                                        <i class="fas fa-ellipsis-h" @click="showDropdown(message)"></i>
+                                        <div class="dropdown" v-if="message.showDropdown">
+                                            <ul>
+                                                <li @click="deleteMessage(message)">Cancella messaggio</li>
+                                            </ul>
+                                        </div>
                                     </div>
                             </div>
                             <div class="col-2 bg-grey">

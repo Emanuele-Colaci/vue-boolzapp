@@ -189,3 +189,12 @@ body{
 .fa-face-smile, .fa-microphone{
     padding: 15px;
 }
+
+.dropdown, .fa-ellipsis-h{
+    cursor: pointer;
+}
+
+.dropdown ul{
+    list-style-type: none;
+    color: red;
+}
