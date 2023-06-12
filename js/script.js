@@ -166,12 +166,29 @@ createApp({
                     ],
                 }
             ],
-            movimento: 0
+            movimento: 0,
+            newMessage: '',
+            
         }
     },
     methods:{
         selectSlide(index){
             this.movimento = index;
+        },
+        addMessage(){
+            if(!this.contacts[this.movimento].messages) {
+                this.contacts[this.movimento].messages = [];
+              }
+            
+              const message = {
+                date: 'nuova data',
+                message: this.newMessage,
+                status: 'sent',
+              };
+            
+              this.contacts[this.movimento].messages.push(message);
+            
+              this.newMessage = '';
         },
     },
 }).mount('#app');
