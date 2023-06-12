@@ -176,12 +176,12 @@ createApp({
             this.movimento = index;
         },
         addMessage(){
-            if(!this.contacts[this.movimento].messages) {
+            if(!this.contacts[this.movimento].messages){
                 this.contacts[this.movimento].messages = [];
-              }
+            }
             
               const message = {
-                date: 'nuova data',
+                date: new Date().toLocaleTimeString([], { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
                 message: this.newMessage,
                 status: 'sent',
               };
@@ -189,6 +189,15 @@ createApp({
               this.contacts[this.movimento].messages.push(message);
             
               this.newMessage = '';
+            setTimeout(() => {
+                const response = {
+                    date: new Date().toLocaleTimeString([], { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+                    message: 'OK',
+                    status: 'received',
+                };
+            
+                this.contacts[this.movimento].messages.push(response);
+            }, 1000);
         },
     },
 }).mount('#app');
