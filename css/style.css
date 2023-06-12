@@ -143,4 +143,49 @@ body{
 
 .bg-image{
     background-image: url(../img/mine.jpg);
+    height: 360px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px 10px 3px 10px;
+    border-radius: 10px;
+}
+
+.sent{
+    background-color: green;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+.received{
+    background-color: #fff;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+}
+
+.date{
+    margin-top: 10px;
+    font-size: 6px;
+    align-self: flex-end;
+    color: rgb(72, 71, 71);
+}
+
+.col-2 input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+}
+
+.fa-face-smile, .fa-microphone{
+    padding: 15px;
 }

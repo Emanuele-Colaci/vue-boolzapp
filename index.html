@@ -62,13 +62,16 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                             </div>
-                            <div class="col-2 bg-image">
-                                <div v-if="">
-
-                                </div>
+                            <div class="bg-image">                                
+                                    <div class="message" v-for="message in contacts[movimento].messages" :key="message.date" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                                        <p>{{ message.message }}</p>
+                                        <p class="date">{{ message.date }}</p>
+                                    </div>
                             </div>
-                            <div class="col-2">
-    
+                            <div class="col-2 bg-grey">
+                                <i class="fa-regular fa-face-smile"></i>
+                                <input type="text" placeholder="Scrivi un messaggio">
+                                <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>
                     </div>
