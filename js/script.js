@@ -168,12 +168,18 @@ createApp({
             ],
             movimento: 0,
             newMessage: '',
-            
+            searchQuery: '',
+            filteredContacts: []
         }
+    },
+    created() {
+        this.filteredContacts = this.contacts;
     },
     methods:{
         selectSlide(index){
-            this.movimento = index;
+            const contact = this.filteredContacts[index];
+            const contactIndex = this.contacts.findIndex(c => c.name === contact.name);
+            this.movimento = contactIndex;
         },
         addMessage(){
             if(!this.contacts[this.movimento].messages){
@@ -198,6 +204,12 @@ createApp({
             
                 this.contacts[this.movimento].messages.push(response);
             }, 1000);
+        },
+        filterContacts(){
+            const query = this.searchQuery.toLowerCase();
+            this.filteredContacts = this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(query)
+            );
         },
     },
 }).mount('#app');

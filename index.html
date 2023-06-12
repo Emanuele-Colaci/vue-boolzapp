@@ -36,16 +36,21 @@
                             </div>
                             <div class="col-1 bg-grey">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchQuery" @input="filterContacts">
                             </div>
                             <div class="height">
-                                <div class="dimension avatar" v-for="(contact, index) in contacts" :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
-                                    <img :src="contact.avatar">
-                                    <div class="margin-left">
-                                        <label v-text="contact.name"></label>
-                                        <p class="color">Ultimo messaggio inviato</p>
+                                <div class="height" v-if="filteredContacts.length > 0">
+                                    <div class="dimension avatar" v-for="(contact, index) in filteredContacts" @click="selectSlide(index)">
+                                        <img :src="contact.avatar">
+                                        <div class="margin-left">
+                                            <label v-text="contact.name"></label>
+                                            <p class="color">Ultimo messaggio inviato</p>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="no-results" v-else>
+                                    Nessun risultato trovato.
+                                </div>                                
                             </div>
                         </div>
                     </div>
