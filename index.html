@@ -14,7 +14,7 @@
         <div id="app">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col bg-white">
                         <div class="row-1">
                             <div class="col-1 bg-grey">
                                 <div class="dimension">
@@ -59,20 +59,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-10">
                         <div class="row-2">
+
                             <div class="col-2 bg-grey dimension">
-                                <div>
+                                <div class="d-flex">                                  
                                     <img :src="contacts[movimento].avatar">
-                                    <label class="margin-left" v-text="contacts[movimento].name"></label>
-                                    <p class="color" v-if="contacts[movimento].messages.length > 0">
-                                        <span v-if="contacts[movimento].messages[contacts[movimento].messages.length - 1].status === 'sent'">Tu: </span>
-                                        {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].message }}
-                                    </p>
-                                    <p class="date" v-if="contacts[movimento].messages.length > 0">
-                                       Data: {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].date }}
-                                    </p>
-                                </div>                                
+                                    <div>
+                                        <label class="margin-left" v-text="contacts[movimento].name"></label>
+                                        <div class="margin-left">
+                                            <label class="color" v-if="contacts[movimento].messages.length > 0">
+                                                <span v-if="contacts[movimento].messages[contacts[movimento].messages.length - 1].status === 'sent'">Tu: </span>
+                                                {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].message }}
+                                            </label>
+                                            <label class="date" v-if="contacts[movimento].messages.length > 0">
+                                                Data: {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].date }}
+                                            </label>
+                                        </div>                                                                       
+                                        </div>
+                                </div>
                                 <div>
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                     <i class="fa-solid fa-paperclip"></i>
