@@ -34,7 +34,7 @@ body{
 ************************/
 
 .container{
-    width: 900px;
+    width: 1000px;
     height: 100%;
     margin: 2rem auto;
 }
@@ -55,7 +55,7 @@ body{
 }
 
 .col-10{
-    width: 100%;
+    width: 75%;
 }
 
 .row-2{
@@ -204,6 +204,7 @@ body{
 
 .fa-face-smile, .fa-microphone{
     padding: 15px;
+    color: gray;
 }
 
 .dropdown, .fa-ellipsis-h{
