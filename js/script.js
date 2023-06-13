@@ -227,10 +227,11 @@ createApp({
             }, 1000);
         },
         filterContacts(){
-            const query = this.searchQuery.toLowerCase();
-            this.filteredContacts = this.contacts.filter(contact =>
-                contact.name.toLowerCase().includes(query)
-            );
+                const query = this.searchQuery.toLowerCase();
+
+                this.filteredContacts = this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(query) || query === '';
+            });
         },
         deleteMessage(message){
             const index = this.contacts[this.movimento].messages.indexOf(message);

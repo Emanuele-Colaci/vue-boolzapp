@@ -6,6 +6,9 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    background: #009688;
+    background: linear-gradient(180deg, #009688 15%, #aeb0a9 15%);
+    height: 100vh;
 }
 
 /**********************
@@ -13,12 +16,12 @@ body{
 ************************/
 
 .bg-grey{
-    background-color: rgba(216, 216, 216, 0.627);
+    background-color: #aaaaa8;
     padding: 10px;
 }
 
 .bg-heavenly{
-    background-color: rgb(94, 171, 248, 0.557);
+    background-color: rgb(94, 171, 248);
     padding: 10px;
     display: flex;
 }
@@ -29,7 +32,6 @@ body{
 
 .container{
     width: 900px;
-    max-height: 100vh;
     margin: 2rem auto;
 }
 
@@ -143,7 +145,7 @@ body{
 
 .bg-image{
     background-image: url(../img/mine.jpg);
-    height: 360px;
+    height: 325px;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -157,6 +159,7 @@ body{
     font-size: 15px;
     padding: 10px 10px 3px 10px;
     border-radius: 10px;
+    width: 40%;
 }
 
 .sent{
@@ -175,7 +178,7 @@ body{
 
 .date{
     margin-top: 10px;
-    font-size: 6px;
+    font-size: 10px;
     align-self: flex-end;
     color: rgb(72, 71, 71);
 }
@@ -197,4 +200,24 @@ body{
 .dropdown ul{
     list-style-type: none;
     color: red;
+}
+
+.dimension-1{
+    padding: 6px 1px;
+}
+
+@media screen and (max-width: 970px){
+    .container{
+        width: 670px;
+    }
+}
+
+@media screen and (max-width: 730px){
+    .container{
+        width: 570px;
+    }
+
+    .bg-image{
+        height: 341px;
+    }
 }

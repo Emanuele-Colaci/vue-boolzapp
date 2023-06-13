@@ -41,7 +41,7 @@
                             <div class="height">
                                 <div class="height" v-if="filteredContacts.length > 0">
                                     <div class="dimension avatar" v-for="(contact, index) in filteredContacts" @click="selectSlide(index)">
-                                        <img :src="contact.avatar">
+                                        <img class="dimension-1" :src="contact.avatar">
                                         <div class="margin-left">
                                             <label v-text="contact.name"></label>
                                             <p class="color" v-if="contact.messages.length > 0">
@@ -65,7 +65,14 @@
                                 <div>
                                     <img :src="contacts[movimento].avatar">
                                     <label class="margin-left" v-text="contacts[movimento].name"></label>
-                                </div>
+                                    <p class="color" v-if="contacts[movimento].messages.length > 0">
+                                        <span v-if="contacts[movimento].messages[contacts[movimento].messages.length - 1].status === 'sent'">Tu: </span>
+                                        {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].message }}
+                                    </p>
+                                    <p class="date" v-if="contacts[movimento].messages.length > 0">
+                                       Data: {{ contacts[movimento].messages[contacts[movimento].messages.length - 1].date }}
+                                    </p>
+                                </div>                                
                                 <div>
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                     <i class="fa-solid fa-paperclip"></i>
