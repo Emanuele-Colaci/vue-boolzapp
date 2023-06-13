@@ -7,7 +7,10 @@
 body{
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(180deg, #009688 15%, #d7dbd5 15%);
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 /**********************
@@ -41,7 +44,7 @@ body{
 
 .row{
     display: flex;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .col-1{
@@ -232,10 +235,10 @@ body{
 
 @media screen and (max-width: 730px){
     .container{
-        width: 570px;
+        width: 670px;
     }
 
     .bg-image{
-        height: 368px;
+        height: 570px;
     }
 }
