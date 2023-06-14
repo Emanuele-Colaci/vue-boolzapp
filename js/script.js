@@ -245,6 +245,9 @@ createApp({
             this.contacts[this.movimento].messages.splice(index, 1);
             message.edit_enabled = !message.edit_enabled;
         },
+        deleteAllMessage(){
+            this.contacts[this.movimento].messages = [];
+        },
         showDropdown(message){
             this.contacts[this.movimento].messages.forEach(msg => {
                 msg.showDropdown = false;
