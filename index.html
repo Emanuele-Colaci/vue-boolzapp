@@ -99,7 +99,8 @@
                             <div class="col-2 bg-grey">
                                 <i class="fa-regular fa-face-smile"></i>
                                 <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage">
-                                <i class="fa-solid fa-microphone"></i>
+                                <button class="button-message" v-if="newMessage.trim() !== ''" @click="addMessage">Invia</button>
+                                <i class="fa-solid fa-microphone" v-show="newMessage.trim() === ''"></i>
                             </div>
                         </div>
                     </div>
