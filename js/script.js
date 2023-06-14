@@ -190,7 +190,8 @@ createApp({
             movimento: 0,
             newMessage: '',
             searchQuery: '',
-            filteredContacts: []
+            filteredContacts: [],
+            isSunVisible: true
         }
     },
     created() {
@@ -251,5 +252,9 @@ createApp({
             
             message.showDropdown = !message.showDropdown;
         },
+        changeBackground(){
+            document.body.classList.toggle('grey-darker');
+            this.isSunVisible = !this.isSunVisible;
+        }
     },
 }).mount('#app');
