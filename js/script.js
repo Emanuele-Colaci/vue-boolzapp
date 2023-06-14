@@ -206,6 +206,9 @@ createApp({
             if(!this.contacts[this.movimento].messages){
                 this.contacts[this.movimento].messages = [];
             }
+            if(this.newMessage.trim() === ''){
+                return;
+            }
                 
                 const message = {
                     date: new Date().toLocaleTimeString([], { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
@@ -245,9 +248,5 @@ createApp({
             
             message.showDropdown = !message.showDropdown;
         },
-        date(){
-            const date = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
-            return date
-        }
     },
 }).mount('#app');
