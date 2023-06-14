@@ -220,9 +220,12 @@ createApp({
                 
                 this.newMessage = '';
             setTimeout(() => {
+                const messages = ["Ciao!", "Come stai?", "Che fai di bello?", "Buona giornata!"];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
                 const response = {
                     date: new Date().toLocaleTimeString([], { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-                    message: 'OK',
+                    message: randomMessage,
                     status: 'received',
                 };
             
