@@ -62,6 +62,9 @@ body{
     FINE COLORI DI BG 
 ************************/
 
+/***********************
+    RIGHE COLONNE E CONTENITORE
+************************/
 .container{
     width: 1000px;
     height: 100%;
@@ -83,6 +86,12 @@ body{
     align-items: center;
 }
 
+.col-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .col-10{
     width: 75%;
 }
@@ -92,6 +101,10 @@ body{
     flex-direction: column;
     border-left: 1px solid black;
 }
+
+/***********************
+    FINE RIGHE COLONNE E CONTENITORE
+************************/
 
 .dimension img{
     width: 40px;
@@ -179,11 +192,6 @@ body{
     margin-left: 5px;
 }
 
-.col-2{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .bg-image{
     background-image: url(../img/mine.jpg);

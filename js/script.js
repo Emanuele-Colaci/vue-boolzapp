@@ -197,12 +197,16 @@ createApp({
     created() {
         this.filteredContacts = this.contacts;
     },
+    //FUNZIONI
+    //GESTISCE L'AVATAR SELEZIONATO
     methods:{
         selectSlide(index){
             const contact = this.filteredContacts[index];
             const contactIndex = this.contacts.findIndex(c => c.name === contact.name);
             this.movimento = contactIndex;
         },
+
+        //AGGIUNGE UN NUOVO MESSAGGIO
         addMessage(){
             if(!this.contacts[this.movimento].messages){
                 this.contacts[this.movimento].messages = [];
@@ -220,6 +224,8 @@ createApp({
                 this.contacts[this.movimento].messages.push(message);
                 
                 this.newMessage = '';
+
+                //RISPOSTA DOPO UN SECONDO UN MESSAGGIO RANDOM 
             setTimeout(() => {
                 const messages = ["Ciao!", "Come stai?", "Che fai di bello?", "Buona giornata!"];
                 const randomMessage = messages[Math.floor(Math.random() * messages.length)];
@@ -233,6 +239,8 @@ createApp({
                 this.contacts[this.movimento].messages.push(response);
             }, 1000);
         },
+
+        //FILTRAGGIO PER CERCARE L'AVATAR
         filterContacts(){
                 const query = this.searchQuery.toLowerCase();
 
@@ -240,14 +248,20 @@ createApp({
                 return contact.name.toLowerCase().includes(query) || query === '';
             });
         },
+
+        //ELLIMINAZIONE MESSAGGIO
         deleteMessage(message){
             const index = this.contacts[this.movimento].messages.indexOf(message);
             this.contacts[this.movimento].messages.splice(index, 1);
             message.edit_enabled = !message.edit_enabled;
         },
+
+        //ELLIMINAZIONE TUTTI I MESSAGGI
         deleteAllMessage(){
             this.contacts[this.movimento].messages = [];
         },
+
+        //DROPDOWN PWE IL MESSAGGIO DA CANCELLARE
         showDropdown(message){
             this.contacts[this.movimento].messages.forEach(msg => {
                 msg.showDropdown = false;
@@ -255,6 +269,8 @@ createApp({
             
             message.showDropdown = !message.showDropdown;
         },
+
+        //GESTISCE IL CAMBIO COLORE DEL BACKGROUND
         changeBackground(){
             document.body.classList.toggle('grey-darker');
             this.isSunVisible = !this.isSunVisible;
